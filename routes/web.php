@@ -24,4 +24,4 @@ Route::view('/enrique-r', 'cvs/cv-jerz')->name('cv-jerz');
 Route::view('/carlos-m', 'cvs/cv-cimg')->name('cv-cimg');
 Route::view('/mariano-g', 'cvs/cv-mgc')->name('cv-mgc');
 
-Route::view('/view1', 'pantallas/pantalla1')->name('pantalla1');
+Route::view('/pantalla1', 'pantallas/pantalla1')->name('pantalla1');
