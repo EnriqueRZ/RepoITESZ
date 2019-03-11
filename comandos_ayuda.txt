@@ -1,0 +1,5 @@
+-->Crear tablas 
+    php artisan make:migration create_nombre_table
+---To run all of your outstanding migrations, execute the migrate Artisan command:
+    php artisan migrate
+
