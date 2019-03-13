@@ -3,3 +3,11 @@
 ---To run all of your outstanding migrations, execute the migrate Artisan command:
     php artisan migrate
 
+-->GIT
+    git add .
+    git commit -m ""
+    git push -u origin dev
+
+-->Borrar caché 
+    Borrar cache navegador (Ctrl+f5)
+    hacer php artisan cache:clear
