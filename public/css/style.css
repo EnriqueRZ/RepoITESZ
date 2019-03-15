@@ -1,28 +1,67 @@
+
 .lateral {
-    width: 20%;
+    width: 17%;
     background-color: rgb(161, 161, 161);
-    height: 100%;
-    position: sticky;
+    height: 88%;
+    float: left;
     top: 0;
-    margin: 5;
-    display: inline-block 
+    margin: 0;
   }
 
-html, body {
-    background-color: rgb(204, 204, 204);
-    color: #adadad;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 80;
-    height: 100vh;
-    margin: 0;
-}
-
-.btn{
+.btnN{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-family: 'Nunito', sans-serif;
     font-weight: 90;
     width:100%;
-    height:13%;
+    height:14.2%;
     box-shadow: red;
+}
+
+.btnS{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 90;
+    width:30%;
+    height:20%;
+    box-shadow: red;
+}
+
+.principal{
+    background-color:  #fff;
+    width: 82%;
+    height: 88%;
+    float: right;
+    text-align: center;
+    
+}
+
+.footer {
+    width: 100%;
+    height: 25px;
+    border-top: 0px solid #E0E0E0;
+    border-right: 0;
+    bottom: 0px; 
+    left: 0px; 
+    text-align: center; 
+    float: inline-end;
+}
+
+main{   
+    text-align:center;
+}
+
+.combos{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 80;
+    width:26%;
+    height:8%;
+}
+
+.miFormulario{
+    background-color: rgb(255, 255, 0);
+    color: rgb(0, 0, 0);
 }
