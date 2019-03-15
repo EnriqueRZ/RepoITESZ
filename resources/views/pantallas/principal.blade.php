@@ -29,31 +29,31 @@
 
     <aside>
         <div class="lateral" >
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. SISTEMAS COMPUTACIONALES
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. TECNOLOGÍAS DE LA INFORMA.
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. GESTIÓN EMPRESARIAL 
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. ELECTRÓNICA
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. INDUSTRIAL
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 ING. INDUSTRIAL ALIMENTARIAS
             </button>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btnN btn-primary">
                 CONTADURÍA PÚBLICA
             </button>
         </div>

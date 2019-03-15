@@ -17,13 +17,14 @@
                     <header>
                         <center>
                             <font size="14" face="Arial">
-                            <br> Carlos Iván Martínez Gutiérrez </br>
+                                <br> Carlos Iván Martínez Gutiérrez </br>
                             </font>
-                            <font align="left" size"12" face="Arial">
+
+                            <font align="left">
                             <br>
                             Juana Pavón #239 Zamora Michoacán 5605553 3517474533 Código Postal 59650 carlos14img@gmail.com Facebook:Carlos Iván Gutiérrez  Instragram: @carlos14img
                             </br><br></br>
-                            <img align="center" src="WhatsApp Image 2019-02-27 at 22.04.44.jpeg" width="200" lenght="150">
+                            <img align="center" src="{{ asset('images/foto-cimg.jpg') }}" width="350" lenght="300">
                             </font>
                         </center>
                             <aside>

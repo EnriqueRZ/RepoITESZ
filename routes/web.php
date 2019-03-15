@@ -32,6 +32,7 @@ Route::view('/mariano-g', 'cvs/cv-mgc')->name('cv-mgc');
     RUTAS PARA PANTALLAS PRINCIPALES
     DENTRO DE LA APLICACIÓN
 */
-Route::view('/pantalla1', 'pantallas/pantalla1')->name('pantalla1');
-Route::view('/pantalla2', 'pantallas/pantalla2')->name('pantalla2');
-Route::view('/pantalla3', 'pantallas/pantalla3')->name('pantalla3');
+Route::view('/principal', 'pantallas/principal')->name('principal');
+Route::view('/view-semestres', 'pantallas/view-semestres')->name('view-semestres');
+Route::view('/view-informacion', 'pantallas/view-informacion')->name('view-informacion');
+Route::view('/view-addmaterial', 'pantallas/view-addmaterial')->name('view-addmaterial');

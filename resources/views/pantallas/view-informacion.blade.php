@@ -1,4 +1,4 @@
-@extends('pantallas.pantalla1')
+@extends('pantallas.principal')
 
 @section('main')
 

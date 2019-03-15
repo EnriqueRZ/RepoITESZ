@@ -87,7 +87,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Repositorio <br> Didáctico
-                    <img src="{{ asset('images/icon.png') }}" width="200" height="200" align="left">
+                    <img src="{{ asset('images/LOGO ITESZ.png') }}" width="200" height="200" align="left">
                 </div>
 
                 <br><br><br><br>
