@@ -2,11 +2,15 @@
 
 @section('main')
 
-    <div>
-        <form action="#" method="post" autocomplete="on">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+        
             <fieldset>
                 <legend class="uno">
-                    Agregar material didáctico
+                    {{ __('messages.addFile') }}
+                    <br><br>
                 </legend>
                 <p>
                 <p>
@@ -26,7 +30,7 @@
                 <label for="name" class="col-md-4 ">
                     Semestre:
                 </label>
-                    <select class="combos col-md-6">
+                    <select class="combos col-md-5">
                         <option selected>1ro</option> 
                         <option>2do</option>
                         <option>3ro</option>
@@ -43,7 +47,7 @@
                         Materia:
                     </label>
                         
-                        <select class="combos col-md-6">
+                        <select class="combos col-md-5">
                             <option selected>Programación Web</option> 
                             <option>CCNA 4</option>
                             <option>Administración de Redes</option>
@@ -57,7 +61,7 @@
                         Unidad:
                     </label>
                         
-                        <select class="combos col-md-6">
+                        <select class="combos col-md-5">
                             <option selected>1</option> 
                             <option>2</option>
                             <option>3</option>
@@ -72,18 +76,24 @@
                         Material:
                     </label>
                         
-                        <input type="text" class="combos col-md-6" name="usuario" placeholder="Material" required>
-                        <br>
-                        <p>
-                        <p>
+                        <input type="text" class="combos col-md-5" name="blob" placeholder="Material" required>
+
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-11 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    SUBIR
+                                    BUSCAR
+                                </button>
+                            </div>
+                            <div class="col-form-label offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    ACEPTAR
                                 </button>
                             </div>
                         </div>
                     </fieldset>
-        </form>
+        
+                </div>
+        </div>
     </div>
+</div>
 @endsection()

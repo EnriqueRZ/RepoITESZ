@@ -35,4 +35,4 @@ Route::view('/mariano-g', 'cvs/cv-mgc')->name('cv-mgc');
 Route::view('/principal', 'pantallas/principal')->name('principal');
 Route::view('/view-semestres', 'pantallas/view-semestres')->name('view-semestres');
 Route::view('/view-informacion', 'pantallas/view-informacion')->name('view-informacion');
-Route::view('/view-addmaterial', 'pantallas/view-addmaterial')->name('view-addmaterial');
+Route::view('/view-addmaterial', 'pantallas/view-addmaterial1')->name('view-addmaterial');
