@@ -13,13 +13,13 @@ class CreateUnidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('UNIDADES', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('NOMBRE', 45);
-            $table->integer('ID_MATERIA')->unsigned();
+        Schema::create('unidades', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre', 45);
+            $table->integer('id_materia')->unsigned();
             $table->timestamps();
 
-            $table->foreign('ID_MATERIA')->references('id')->on('MATERIA');
+            $table->foreign('id_materia')->references('id')->on('materia');
         });
     }
 

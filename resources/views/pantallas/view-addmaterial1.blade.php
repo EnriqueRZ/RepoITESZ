@@ -76,7 +76,7 @@
                         Material:
                     </label>
                         
-                        <input type="text" class="combos col-md-5" name="blob" placeholder="Material" required>
+                        <input type="file" class="combos col-md-5" name="blob" placeholder="Material" required>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-11 offset-md-4">

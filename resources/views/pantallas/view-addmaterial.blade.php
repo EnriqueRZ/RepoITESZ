@@ -3,7 +3,7 @@
 @section('main')
 
     <div>
-        <form action="#" method="post" autocomplete="on">
+        <form class="card" action="#" method="post" autocomplete="on">
             <fieldset>
                 <legend class="uno">
                     Agregar material didáctico

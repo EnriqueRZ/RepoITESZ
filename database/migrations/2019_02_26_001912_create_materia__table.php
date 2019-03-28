@@ -13,13 +13,13 @@ class CreateMateriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('MATERIA', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('NOMBRE', 45);
-            $table->integer('ID_CARRERA')->unsigned();
+        Schema::create('materia', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre', 45);
+            $table->integer('id_carrera')->unsigned();
             $table->timestamps();
 
-            $table->foreign('ID_CARRERA')->references('id')->on('CARRERA');
+            $table->foreign('id_carrera')->references('id')->on('carrera');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateMateriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materia_');
+        Schema::dropIfExists('materia');
     }
 }
