@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('id_tipo_usuario')->unsigned();
             $table->integer('id_carrera')->unsigned();
+            
             $table->rememberToken();
             $table->timestamps();
 

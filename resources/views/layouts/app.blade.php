@@ -18,6 +18,50 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    
+    <style>
+            ul, ol {
+				list-style:none;
+			}
+			
+			.navi > li {
+				float:left;
+			}
+			
+			.navi li a {
+				background-color:none;
+				color: black;
+				text-decoration:none;
+				padding:10px 12px;
+                display:block;
+			}
+			
+			.navi li a:hover {
+                background-color: gray;
+                border-color: black;
+			}
+			
+			.navi li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.navi li:hover > ul {
+				display:block;
+			}
+			
+			.navi li ul li {
+				position:sticky;
+			}
+			
+			.navi li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+    </style>
 </head>
 <body>
     <div id="app">
@@ -33,9 +77,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    @guest
+                        @if (Route::has('users.store'))
+                                    
+                        @endif
+                        @else  
+                        <ul class="navi"> 
+                            <li><a href="" class="navbar-brand">Carrera</a>
+                                <ul>
+                                    <li><a href="" class="navbar-brand">I.S.C.</a></li>
+                                    <li><a href="" class="navbar-brand">I.E.</a></li>
+                                    <li><a href="" class="navbar-brand">I.G.E.</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </ul>
-
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -43,17 +100,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            @if (Route::has('users.store'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('users.store') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
+                        @else  
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->nombre }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Http\Request;
+use Session;
+
 class LoginController extends Controller
 {
     /*
@@ -22,9 +25,27 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function login(){
+    public function login(Request $request){
+        //return $request;
         $this->validate(request(), [
-            
+            'id' => ['required'],
+            'password' => ['required'],
         ]);
+
+        $credentials = $request->only('id', 'password');
+
+        if(Auth::attempt($credentials, $request->has('remember'))){
+            return view('pantallas.principal');
+        }
+
+        return 'error';
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        Session::flush();
+
+        return view('welcome');
     }
 }

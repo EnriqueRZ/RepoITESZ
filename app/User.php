@@ -16,7 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'id', 'email', 'id_carrera','password',
+        'nombre',
+        'id',
+        'email',
+        'password',
+        'id_tipo_usuario',
+        'id_carrera',
     ];
 
     /**
@@ -27,4 +32,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function carrera($id_carrera){
+        return \DB::table('carrera')
+            ->select('id')
+            ->where('nombre_carrera', $id_carrera)
+            ->first();
+    }
+
+    public static function tipoUsuario($id_tipoUsuario){
+        return DB::table('tipo_usario')
+            ->select('id')
+            ->where('nombre_carrera', $id_tipoUsuario)
+            ->first();
+    }
 }

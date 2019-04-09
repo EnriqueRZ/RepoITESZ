@@ -17,7 +17,7 @@ class RegisterModel extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre', 'id', 'email', 'id_carrera','password', 'id_tipo_usuario',
+        'nombre', 'id', 'email', 'id_carrera','password', 'id_tipo_usuario'
     ];
 
     /**

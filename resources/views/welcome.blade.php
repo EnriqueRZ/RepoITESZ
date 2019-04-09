@@ -48,9 +48,15 @@
                 color: #4F2B23;
             }
 
-            .title {
-                font-size: 100px;
-            }
+           
+                .title{
+                    font-size: calc(3rem + 3vw);
+                }
+            
+            img{
+                width: calc(5rem + 5vw);
+                height: calc(5rem + 5vw);
+            } 
 
             .links > a {
                 color: #000000;
@@ -73,12 +79,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">REPOSITORIO</a>
+                        <a href="{{ url('/principal') }}">REPOSITORIO</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                        @if (Route::has('users.store'))
+                            <a href="{{ route('users.store') }}">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -87,7 +93,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Repositorio <br> Didáctico
-                    <img src="{{ asset('images/LOGO ITESZ.png') }}" width="200" height="200" align="left">
+                    <img src="{{ asset('images/LOGO ITESZ.png') }}" align="left">
                 </div>
 
                 <br><br><br><br>

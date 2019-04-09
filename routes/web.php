@@ -20,16 +20,29 @@ Route::get('/', function () {
     RUTAS PARA LA PARTE DE
     LOGIN Y REGISTRO
 */
+ 
 Route::get('/login', function () {
     return view('auth.login');
 });
+
+/** 
 Route::get('/register', function () {
     return view('auth.register');
 });
-Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
+*/
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-    
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+//Route::post('register', 'Auth\UserController@register')->name('register');
+
+Route::resource('users', 'Auth\UserController');
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');

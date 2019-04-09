@@ -6,27 +6,28 @@
 </head>
 <body>
 
+
 <div class="container">
     <div class="row justify-content-center">
-
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
     </div>
 </div>
-<main>
-    
-        <article class="principal">
-            <div>
-                @section('main')
-                    <h1>Hola</h1>
-                @show
-            </div>
+
+<main class="">
+
+<article class="principal">
+        @section('main')
+        
+            HOLA
+        
+        @show
         </article>
     
-
+    <!--
     <aside>
         <div class="lateral" >
             <button type="submit" class="btnN btn-primary">
@@ -58,7 +59,7 @@
             </button>
         </div>
     </aside>
-
+    -->
     <footer>
         <div class="footer">
             Derechos reservados ITESZ 2019 - 0000
