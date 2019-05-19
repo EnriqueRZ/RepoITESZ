@@ -42,8 +42,9 @@ Route::get('/register', function () {
 //Route::post('register', 'Auth\UserController@register')->name('register');
 
 Route::resource('users', 'Auth\UserController');
-
-
+	
+Route::get('/app', ['as' => 'layouts.app', 'uses' => 'CarreraController@index']);
+Route::get('/principal', ['as' => 'pantallas.principal', 'uses' => 'CarreraController@index']);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -61,6 +62,13 @@ Route::view('/mariano-g', 'cvs/cv-mgc')->name('cv-mgc');
     DENTRO DE LA APLICACIÓN
 */
 Route::view('/principal', 'pantallas/principal')->name('principal');
-Route::view('/view-semestres', 'pantallas/view-semestres')->name('view-semestres');
+Route::view('/primer', 'pantallas/primerpantalla')->name('primer');
+
+//Route::view('/view-semestres', 'pantallas/view-semestres')->name('view-semestres');
+Route::get('Controller\CarreraContoller\index\{carrera};', 'CarreraController@index')->name('view-semestres');
+//ejemplo con dos parametros Route::get('Controller\MaterialContoller\index\{carrera}\{semestre};', 'MaterialController@index')->name('view-material');
+Route::get('Controller\MaterialContoller\index\{id_materia}\{name};', 'MaterialController@index')->name('view-material');
+
+
 Route::view('/view-informacion', 'pantallas/view-informacion')->name('view-informacion');
 Route::view('/view-addmaterial', 'pantallas/view-addmaterial1')->name('view-addmaterial');

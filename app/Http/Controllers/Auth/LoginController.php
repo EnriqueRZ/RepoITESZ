@@ -22,7 +22,7 @@ class LoginController extends Controller
     |
     */
     public function showLoginForm(){
-        return view('auth.login');
+        return view('pantallas.principal');
     }
 
     public function login(Request $request){
@@ -35,7 +35,8 @@ class LoginController extends Controller
         $credentials = $request->only('id', 'password');
 
         if(Auth::attempt($credentials, $request->has('remember'))){
-            return view('pantallas.principal');
+            
+            return view('pantallas.primerpantalla');
         }
 
         return 'error';

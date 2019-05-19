@@ -43,10 +43,10 @@ class UserController extends Controller
     {
         $vari = DB::table('itesz.carrera')
             ->select('id')
-            ->where('nombre_carrera', $request['id_carrera'])
+            ->where('nombre', $request['id_carrera'])
             ->first();
 
-        //echo 'HOLA'; 
+        #echo 'HOLA'; 
         //var_dump($vari);
         //return $vari->id;
         $request['id_carrera'] = $vari->id;
@@ -73,7 +73,7 @@ class UserController extends Controller
             'id_carrera' => $request['id_carrera'],
         ]);
 
-        return view('pantallas.principal');
+        return view('pantallas.primerpantalla');
     }
 
     /**

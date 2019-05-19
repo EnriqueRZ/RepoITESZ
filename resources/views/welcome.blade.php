@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>REPOSITORIO ITESZ</title>
@@ -12,7 +13,7 @@
 
         <!-- Styles -->
         <style>
-            html, body {
+                        html, body {
                 background-color: #FFFF;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -48,11 +49,10 @@
                 color: #4F2B23;
             }
 
-           
-                .title{
-                    font-size: calc(3rem + 3vw);
-                }
-            
+            .title{
+                font-size: calc(3rem + 3vw);
+            }
+
             img{
                 width: calc(5rem + 5vw);
                 height: calc(5rem + 5vw);
@@ -72,6 +72,7 @@
             .m-b-md {
                 margin-bottom: 90px;
             }
+
         </style>
     </head>
     <body>

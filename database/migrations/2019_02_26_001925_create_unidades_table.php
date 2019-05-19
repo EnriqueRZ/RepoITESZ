@@ -16,10 +16,10 @@ class CreateUnidadesTable extends Migration
         Schema::create('unidades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 45);
-            $table->integer('id_materia')->unsigned();
+            #$table->integer('id_materia')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_materia')->references('id')->on('materia');
+            #$table->foreign('id_materia')->references('id')->on('materia');
         });
     }
 

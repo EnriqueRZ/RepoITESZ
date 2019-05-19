@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     
     
     <style>
@@ -30,7 +31,7 @@
 			}
 			
 			.navi li a {
-				background-color:none;
+				background-color: white;
 				color: black;
 				text-decoration:none;
 				padding:10px 12px;
@@ -67,6 +68,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
+            @stack('styles')
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -83,14 +85,17 @@
                         @endif
                         @else  
                         <ul class="navi"> 
-                            <li><a href="" class="navbar-brand">Carrera</a>
+                            
+                            <li><a href="" class="navbar-brand form-controller">Carrera</a>
                                 <ul>
-                                    <li><a href="" class="navbar-brand">I.S.C.</a></li>
-                                    <li><a href="" class="navbar-brand">I.E.</a></li>
-                                    <li><a href="" class="navbar-brand">I.G.E.</a></li>
+                                    @foreach($carreras as $carrera)
+                                        <li><a href="{{ route('view-semestres', $carrera->id) }}">{{ $carrera->nombre }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
+                            
                         </ul>
+
                     </ul>
                     @endguest
                     <!-- Right Side Of Navbar -->

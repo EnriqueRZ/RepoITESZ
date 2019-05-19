@@ -30,16 +30,16 @@ class RegisterModel extends Model
     ];
 
     public static function carrera($id_carrera){
-        return \DB::table('carrera')
+        return DB::table('carrera')
             ->select('id')
-            ->where('nombre_carrera', $id_carrera)
+            ->where('nombre', $id_carrera)
             ->first();
     }
 
     public static function tipoUsuario($id_tipoUsuario){
         return DB::table('tipo_usario')
             ->select('id')
-            ->where('nombre_carrera', $id_tipoUsuario)
+            ->where('nombre_tipo_usuario', $id_tipoUsuario)
             ->first();
     }
 }

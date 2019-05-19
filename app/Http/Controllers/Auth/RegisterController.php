@@ -25,7 +25,7 @@ class RegisterController extends Controller
     {
          $vari = DB::table('itesz.carrera')
             ->select('id')
-            ->where('nombre_carrera', $data['id_carrera'])
+            ->where('nombre', $data['id_carrera'])
             ->first();
 
         //echo 'HOLA'; 
@@ -53,7 +53,7 @@ class RegisterController extends Controller
     {
         $profession = DB::table('carrera')
                 ->select('id')
-                ->where('nombre_carrera', 'isc')
+                ->where('nombre', 'isc')
                 ->first();
         echo 'hola';
 

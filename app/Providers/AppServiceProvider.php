@@ -4,6 +4,13 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Carrera;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\View;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
+        $carreras = Carrera::all();
+        View::share('carreras', $carreras);
+        
     }
 
     /**

@@ -20,9 +20,12 @@ class CreateMaterialDidacticoTable extends Migration
             $table->string('tamaño', 45);
             $table->binary('recurso')->nullable();;
             $table->string('link', 90)->nullable();;
-            $table->integer('id_unidades')->unsigned();
+            $table->integer('id_materia')->unsigned();
 
-            $table->foreign('id_unidades')->references('id')->on('unidades');
+            $table->foreign('id_materia')->references('id')->on('materia');
+            #$table->integer('id_unidades')->unsigned();
+
+            #$table->foreign('id_unidades')->references('id')->on('unidades');
             $table->timestamps();
         });
     }

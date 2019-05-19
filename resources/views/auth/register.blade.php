@@ -54,17 +54,13 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="id_carrera" class="col-md-4 col-form-label text-md-right">{{ __('Carrera') }}</label>
+                                <label for="id_carrera" class="col-md-4 col-form-label text-md-right combos">{{ __('Carrera') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <select id="id_carrera" type="text" class="combos col-md-6 block" name="id_carrera">
-                                        <option selected value="ISC">ISC</option> 
-                                        <option value="IIA">IIA</option>
-                                        <option value="IGE">IGE</option>
-                                        <option value="IE">IE</option>
-                                        <option value="II">II</option>
-                                        <option value="CP">CP</option>
-                                        <option value="ITICS">ITICS</option>
+                                    <select id="id_carrera" type="text" class="" name="id_carrera">
+                                        @foreach($carreras as $carrera)
+                                            <option value="{{ $carrera->nombre }}">{{ $carrera->nombre }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
