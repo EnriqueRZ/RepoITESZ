@@ -13,16 +13,19 @@ class CreateMaterialDidacticoTable extends Migration
      */
     public function up()
     {
-        Schema::create('MATERIAL_DIDACTICO', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('NOMBRE', 45);
-            $table->string('TIPO', 45);
-            $table->string('TAMAÑO', 45);
-            $table->binary('RECURSO')->nullable();;
-            $table->string('LINK', 90)->nullable();;
-            $table->integer('ID_UNIDADES')->unsigned();
+        Schema::create('material_didactico', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre', 45);
+            $table->string('tipo', 45);
+            $table->string('tamaño', 45);
+            $table->binary('recurso')->nullable();;
+            $table->string('link', 90)->nullable();;
+            $table->integer('id_materia')->unsigned();
 
-            $table->foreign('ID_UNIDADES')->references('id')->on('UNIDADES');
+            $table->foreign('id_materia')->references('id')->on('materia');
+            #$table->integer('id_unidades')->unsigned();
+
+            #$table->foreign('id_unidades')->references('id')->on('unidades');
             $table->timestamps();
         });
     }

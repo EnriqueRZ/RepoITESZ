@@ -13,11 +13,11 @@ class CreateCarreraTable extends Migration
      */
     public function up()
     {
-        Schema::create('CARRERA', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('NOMBRE_CARRERA', 45);
-            $table->binary('PLAN_ESTUDIOS')->nullable();
-            $table->integer('CANTIDAD_SEMESTRE');
+        Schema::create('carrera', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre', 45);
+            $table->binary('plan_estudios')->nullable();
+            $table->integer('cantidad_semestre');
             $table->timestamps();
             
         });
@@ -30,6 +30,6 @@ class CreateCarreraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carrera_');
+        Schema::dropIfExists('carrera');
     }
 }

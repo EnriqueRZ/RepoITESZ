@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use DB;
 
-class User extends Authenticatable
+class RegisterModel extends Model
 {
     use Notifiable;
 
@@ -16,12 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre',
-        'id',
-        'email',
-        'password',
-        'id_tipo_usuario',
-        'id_carrera',
+        'nombre', 'id', 'email', 'id_carrera','password', 'id_tipo_usuario'
     ];
 
     /**
@@ -34,16 +30,16 @@ class User extends Authenticatable
     ];
 
     public static function carrera($id_carrera){
-        return \DB::table('carrera')
+        return DB::table('carrera')
             ->select('id')
-            ->where('nombre_carrera', $id_carrera)
+            ->where('nombre', $id_carrera)
             ->first();
     }
 
     public static function tipoUsuario($id_tipoUsuario){
         return DB::table('tipo_usario')
             ->select('id')
-            ->where('nombre_carrera', $id_tipoUsuario)
+            ->where('nombre_tipo_usuario', $id_tipoUsuario)
             ->first();
     }
 }

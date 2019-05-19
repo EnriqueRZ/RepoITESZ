@@ -30,17 +30,15 @@
 
 .principal{
     background-color:  #fff;
-    width: 82%;
-    height: 88%;
-    float: right;
+    width: 100%;
+    height: 90%;
     text-align: center;
-    
 }
 
 .footer {
     width: 100%;
-    height: 25px;
-    border-top: 0px solid #E0E0E0;
+    height: 5px;
+    border-top: 5px solid #E0E0E0;
     border-right: 0;
     bottom: 0px; 
     left: 0px; 
@@ -48,8 +46,10 @@
     float: inline-end;
 }
 
-main{   
+.m-main{   
     text-align:center;
+    width: 100%;
+    height: 90%;
 }
 
 .combos{
@@ -57,11 +57,42 @@ main{
     color: rgb(0, 0, 0);
     font-family: 'Nunito', sans-serif;
     font-weight: 80;
-    width:26%;
-    height:8%;
+    width:25px;
+    height:20px;
 }
 
 .miFormulario{
     background-color: rgb(255, 255, 0);
     color: rgb(0, 0, 0);
+}
+
+.bot{
+    text-decoration: black;
+    position: center;
+    font-size: 15px;
+    background-color: brown;
+}
+
+.menu-m{
+    font-size: 40px;
+    background-color: gr;
+    border-color: black;
+}
+
+body{
+    width: 100%;
+    height: 90%;
+}
+
+.title1 {
+    font-size: calc(1rem + 1vw);
+}
+
+.content {
+    text-align: center;
+    color: #4F2B23;
+}
+
+.m-b-md {
+    margin-bottom: 90px;
 }
