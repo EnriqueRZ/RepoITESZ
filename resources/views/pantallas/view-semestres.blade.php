@@ -11,17 +11,59 @@
         </center>
 
         <center><h3>Semestres</h3><br>
+        <div class="semestres" >
+        @for ($i = 1 ; $i <=  $datosC->cantidad_semestre ; $i++)
+            <button type="submit" class="btnS btn-light">
+                Semestre {{ $i }}
+                @foreach ($dat as $object)
+                    @if( $object->semestre == $i )
+                        <li>
+                            <a href="{{ route('view-material', [$object->id, $object->nombre]) }}">
+                                {{ $object->nombre }}
+                            </a>
+                        </li>
+                    @endif
+                @endforeach
+
+                @if(Auth::user()->id_tipo_usuario > 1)
+                    <!--
+                    <a class="btn btn-danger" id='n'
+                        href="{{ route('index', $datosC->id) }}">
+                        Agregar materia
+                    </a>
+                    -->
+                    <a class="btn btn-danger" id='n'
+                        href="{{ route('admin', [$datosC->id, $i]) }}">
+                        Administración
+                    </a>
+                @endif
+            </button>
+        @endfor
+        </div>      
+    
+        <!--
             <div class="semestres" >
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     1er Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 1 )
                         <li><a href="{{ route('view-material', [$object->id, $object->nombre]) }}">{{ $object->nombre }}</a></li>
                         @endif
                     @endforeach
+                    @if(Auth::user()->id_tipo_usuario > 1)
+                <a class="btn btn-danger" id='n'
+                    href="{{ route('index', $datosC->id) }}">
+                    Agregar materia
+                </a>
+
+                <a class="btn btn-danger" id='n'
+                    href="{{ route('admin', $datosC->id) }}">
+                    Administración
+                </a>
+                    @endif
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     2do Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 2 )
@@ -30,7 +72,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     3er Semestre 
                     @foreach ($dat as $object)
                         @if( $object->semestre == 3 )
@@ -39,7 +81,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     4to Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 4 )
@@ -48,7 +90,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     5to Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 5 )
@@ -57,7 +99,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     6to Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 6 )
@@ -66,7 +108,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     7to Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 7 )
@@ -75,7 +117,7 @@
                     @endforeach
                 </button>
 
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     8vo Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 8 )
@@ -83,7 +125,7 @@
                         @endif
                     @endforeach
                 </button>
-                <button type="submit" class="btnS btn-primary">
+                <button type="submit" class="btnS btn-light">
                     9no Semestre
                     @foreach ($dat as $object)
                         @if( $object->semestre == 9 )
@@ -92,6 +134,20 @@
                     @endforeach
                 </button>
             </div>
+        
+
+            @if(Auth::user()->id_tipo_usuario > 1)
+                <a class="btn btn-danger" id='n'
+                    href="{{ route('index', $datosC->id) }}">
+                    Agregar materia
+                </a>
+
+                <a class="btn btn-danger" id='n'
+                    href="{{ route('admin', $datosC->id) }}">
+                    Administración
+                </a>
+            @endif
+            -->
         </center>
     </div>
 

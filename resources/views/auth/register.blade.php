@@ -57,7 +57,7 @@
                                 <label for="id_carrera" class="col-md-4 col-form-label text-md-right combos">{{ __('Carrera') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <select id="id_carrera" type="text" class="" name="id_carrera">
+                                    <select id="id_carrera" type="text" class="browser-default custom-select" name="id_carrera">
                                         @foreach($carreras as $carrera)
                                             <option value="{{ $carrera->nombre }}">{{ $carrera->nombre }}</option>
                                         @endforeach

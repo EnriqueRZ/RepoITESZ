@@ -18,7 +18,7 @@ class CarreraController extends Controller
                 ->get();
 
         $datosC = DB::table('carrera')
-            ->select('id', 'nombre')
+            ->select('id', 'nombre', 'cantidad_semestre')
             ->where('id', $carrera)
             ->first();
 

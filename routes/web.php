@@ -68,7 +68,27 @@ Route::view('/primer', 'pantallas/primerpantalla')->name('primer');
 Route::get('Controller\CarreraContoller\index\{carrera};', 'CarreraController@index')->name('view-semestres');
 //ejemplo con dos parametros Route::get('Controller\MaterialContoller\index\{carrera}\{semestre};', 'MaterialController@index')->name('view-material');
 Route::get('Controller\MaterialContoller\index\{id_materia}\{name};', 'MaterialController@index')->name('view-material');
+Route::get('Controller\MaterialContoller\delete\{id_material}\{id_materia}\{name};', 'MaterialController@delete')->name('view-material-delete');
 
+Route::get('Controller\MaterialContoller\delete\{id_materia}\{name};', 'MaterialController@add')->name('view-add');
+Route::post('addMaterial', 'MaterialController@addMaterial')->name('addMaterial');
+Route::get('Controller\MaterialContoller\setIdMateria\{id_materia};', 'MaterialController@setIdMateria')->name('setIdMateria');
+Route::get('/downloadFile/{id_material}' , 'MaterialController@downloadFile')->name('download');
+Route::get('Controller\MaterialContoller\edit\{material};' , 'MaterialController@edit')->name('edit');
+Route::post('updateMaterial/{id}', 'MaterialController@update')->name('updateMaterial');
+
+
+
+//Materia
+Route::get('byCarrera/{id}' , 'MateriaController@byCarrera')->name('byCarrera');
+Route::get('index/{id}/{semestre?}' , 'MateriaController@index')->name('index');
+Route::get('admin/{id}/{semestre?}' , 'MateriaController@admin')->name('admin');
+Route::post('addMateria', 'MateriaController@addMateria')->name('addMateria');
+Route::get('delete/{id_materia}' , 'MateriaController@delete')->name('deleteM');
+Route::get('edit/{id}' , 'MateriaController@edit')->name('edit');
+//Fin
 
 Route::view('/view-informacion', 'pantallas/view-informacion')->name('view-informacion');
 Route::view('/view-addmaterial', 'pantallas/view-addmaterial1')->name('view-addmaterial');
+
+Route::view('/administracion', 'pantallas/administracion')->name('view-admin');

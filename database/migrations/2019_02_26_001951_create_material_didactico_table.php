@@ -17,9 +17,8 @@ class CreateMaterialDidacticoTable extends Migration
             $table->increments('id');
             $table->string('nombre', 45);
             $table->string('tipo', 45);
-            $table->string('tamaño', 45);
-            $table->binary('recurso')->nullable();;
-            $table->string('link', 90)->nullable();;
+            $table->string('recurso', 300)->nullable();;
+            $table->string('link', 500)->nullable();;
             $table->integer('id_materia')->unsigned();
 
             $table->foreign('id_materia')->references('id')->on('materia');

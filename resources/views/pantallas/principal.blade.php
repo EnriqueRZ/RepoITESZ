@@ -26,11 +26,13 @@
                 @show
         </article>
 
+        <!--
         <footer>
             <div class="footer">
                 Derechos reservados ITESZ 2019 - 0000
             </div>
         </footer>
+        -->
     </main>
 @endsection
     </body>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 
 use DB;
 
@@ -72,8 +73,11 @@ class UserController extends Controller
             'id_tipo_usuario' => $request['id_tipo_usuario'],
             'id_carrera' => $request['id_carrera'],
         ]);
-
-        return view('pantallas.primerpantalla');
+        $name = $request['nombre'];
+        #return $name;
+        #$name = Auth::user()->nombre;
+        Auth::loginUsingId($request['id']);
+        return view('pantallas.primerpantalla', compact('name'));
     }
 
     /**

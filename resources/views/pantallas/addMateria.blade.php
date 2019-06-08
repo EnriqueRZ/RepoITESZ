@@ -13,13 +13,11 @@
 		>&times;</button>
 	@endif	
 
-<form name="miFormulario" action="{{ route('addMaterial') }}" enctype="multipart/form-data" method="POST">
+<form name="miFormulario" action="{{ route('addMateria') }}" method="POST" autocomplete="on">
 	@csrf
 	<fieldset>
 		<legend class="uno">
-			
-			{{ $carrera->nombre }} - {{ $name }}
-
+			{{ $info->nombre }}
 		</legend>
 	</fieldset>
 	
@@ -27,7 +25,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Agregar material') }}</div>
+                <div class="card-header">{{ __('Agregar materia') }}</div>
 
 					<br><br>
 					<div class="form-group row">
@@ -46,28 +44,9 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
-						<label class="col-md-4 col-form-label text-md-right ">{{ __('Materias:') }}</label>
-						
-						<div class="col-md-6">
-							<select id="id_materia" type="text" class="browser-default custom-select" name="id_materia">
-								<option value="{{ $id_materia }}" selected="selected">{{ $name }}</option>
-							</select>
-						</div>
-					</div>
-
-
 					<br>
 					<div class="form-group row">
-						<label class="col-md-4 col-form-label text-md-right">{{ __('Tipo:') }}</label>
-						<div class="col-md-6">
-							<input id="tipo" type="text" class="form-control" name="tipo" required>
-						</div>
-					</div>
-
-					<br>
-					<div class="form-group row">
-						<label class="col-md-4 col-form-label text-md-right">{{ __('Nombre material:') }}</label>
+						<label class="col-md-4 col-form-label text-md-right">{{ __('Nombre:') }}</label>
 						<div class="col-md-6">
 							<input id="nombre" type="text" class="form-control" name="nombre" required>
 						</div>
@@ -75,20 +54,11 @@
 
 					<br>
 					<div class="form-group row">
-						<label class="col-md-4 col-form-label text-md-right">{{ __('URL:') }}</label>
+						<label class="col-md-4 col-form-label text-md-right">{{ __('Núm. Semestre:') }}</label>
 						<div class="col-md-6">
-							<input id="link" type="url" class="form-control" name="link" required>
+							<input id="semestre" type="number" value="{{ $semestre }}" max="9" min="1" class="form-control" name="semestre" required>
 						</div>
-					</div>
-
-					<br>
-					<div class="form-group row">
-						<label class="col-md-4 col-form-label text-md-right">{{ __('Archivo:') }}</label>
-						<div class="col-md-6">
-							<input id="recurso" type="file" accept="images/* .pdf .doc" class="form-control" name="recurso" required>
-						</div>
-					</div>
-			
+					</div>		
 					
 					<div class="form-group row mb-0">
 						<div class="col-md-10 offset-md-4">
@@ -104,6 +74,5 @@
 	</div>
 </div>
 
-	
 </form>    
 @endsection()

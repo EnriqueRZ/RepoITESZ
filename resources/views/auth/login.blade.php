@@ -1,12 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+@include('flash::message')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                <center>
+                @if(session()->has('flash_notification.important'))
+                    <button type="button"
+                            class="close table-tam"
+                            data-dismiss="alert"
+                            aria-hidden="true"
+                    >&times;</button>
+                @endif
+                </center>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -53,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
