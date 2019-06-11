@@ -24,7 +24,7 @@
     font-family: 'Nunito', sans-serif;
     font-weight: 90;
     width:30%;
-    height:20%;
+    height:50px;
     box-shadow: red;
 }
 
@@ -95,4 +95,8 @@ body{
 
 .m-b-md {
     margin-bottom: 90px;
+}
+
+.tabla-tam {
+    width: 90%;
 }

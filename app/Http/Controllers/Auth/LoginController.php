@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use Session;
+use App\Http\Controllers\flash;
 
 class LoginController extends Controller
 {
@@ -35,11 +36,13 @@ class LoginController extends Controller
         $credentials = $request->only('id', 'password');
 
         if(Auth::attempt($credentials, $request->has('remember'))){
-            
-            return view('pantallas.primerpantalla');
+            $name = Auth::user()->nombre;
+            return view('pantallas.primerpantalla', compact('name'));
+        } else {
+            flash('¡Usuario o contraseña incorrectas!')->error();
+            return view('auth.login');
         }
 
-        return 'error';
     }
 
     public function logout(){

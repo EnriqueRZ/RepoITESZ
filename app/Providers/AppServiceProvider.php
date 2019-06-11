@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use App\Carrera;
+use App\Tipo_Usuario;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -23,7 +24,8 @@ class AppServiceProvider extends ServiceProvider
         
         $carreras = Carrera::all();
         View::share('carreras', $carreras);
-        
+        $tipo_usuarios = Tipo_Usuario::all();
+        View::share('tipo_usuarios', $tipo_usuarios);
     }
 
     /**

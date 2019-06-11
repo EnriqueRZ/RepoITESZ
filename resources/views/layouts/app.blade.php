@@ -24,6 +24,7 @@
     <style>
             ul, ol {
 				list-style:none;
+                z-index: 999;
 			}
 			
 			.navi > li {
@@ -61,6 +62,10 @@
 				right:-140px;
 				top:0px;
 			}
+
+            .menu { 
+                z-index: 0;
+            }
 			
     </style>
 </head>
@@ -84,17 +89,20 @@
                                     
                         @endif
                         @else  
-                        <ul class="navi"> 
-                            
-                            <li><a href="" class="navbar-brand form-controller">Carrera</a>
-                                <ul>
-                                    @foreach($carreras as $carrera)
-                                        <li><a href="{{ route('view-semestres', $carrera->id) }}">{{ $carrera->nombre }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            
-                        </ul>
+                            <ul class="navi menu"> 
+                                
+                                <li><a href="#" class="navbar-brand form-controller" disabled>Carrera</a>
+                                    <ul class="menu">
+                                        @foreach($carreras as $carrera)
+                                            <li><a href="{{ route('view-semestres', $carrera->id) }}">
+                                                {{ $carrera->nombre }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                
+                            </ul>
 
                     </ul>
                     @endguest
@@ -110,7 +118,12 @@
                                     <a class="nav-link" href="{{ route('users.store') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else  
+                        @else 
+                            @if ( Auth::user()->id_tipo_usuario == 3 )
+                                <a class="navbar-brand" href="{{ route('view-admin') }}">
+                                    Herramientas
+                                </a>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->nombre }} <span class="caret"></span>

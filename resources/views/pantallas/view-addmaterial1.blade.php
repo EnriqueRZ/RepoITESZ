@@ -1,59 +1,109 @@
 @extends('pantallas.principal')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@section('main')
 
-@section('main')	
-<form name="miFormulario" action="#" method="post" autocomplete="on">
+@include('flash::message')
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="{{ asset('js/material.js') }}"></script>
+	@if(session()->has('flash_notification.important'))
+		<button type="button"
+				class="close table-tam"
+				data-dismiss="alert"
+				aria-hidden="true"
+		>&times;</button>
+	@endif	
+
+<form name="miFormulario" action="{{ route('addMaterial') }}" enctype="multipart/form-data" method="POST">
+	@csrf
 	<fieldset>
 		<legend class="uno">
-			{{ __('messages.addFile') }}
-			<br><br>
-	</legend>
-	Carrera:
-		<select>
-			<option selected>ISC</option> 
-			<option>IIA</option>
-			<option>IGE</option>
-			<option>IE</option>
-			<option>II</option>
-			<option>CP</option>
-			<option>ITICS</option>
-		</select>
-			<br><p><p>
-		Semestre:
-		<select>
-			<option selected>1ro</option> 
-			<option>2do</option>
-			<option>3ro</option>
-			<option>4to</option>
-			<option>5to</option>
-			<option>6to</option>
-			<option>7mo</option>
-			<option>8vo</option>
-		</select>
-		<br><p><p>
-		Materia:
-		<select>
-			<option selected>Programación Web</option> 
-			<option>CCNA 4</option>
-			<option>Administración de Redes</option>
-			<option>Inteligencia Artificial</option>
-			<option>Taller de Redes WAN</option>
-		</select>
-		<br><p><p>
-		Unidad:
-		<select>
-			<option selected>1</option> 
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-		</select>
-		<br><p><p>
-		<label>Material:</label>
-		<input type="text" name="usuario" placeholder="Material" required>
-		<br><p><p>
-		
-		<input type="submit" name="Subir" value="Subir">
+			
+			{{ $carrera->nombre }} - {{ $name }}
+
+		</legend>
 	</fieldset>
+	
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Agregar material') }}</div>
+
+					<br><br>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right ">{{ __('Carrera:') }}</label>
+						
+						<div class="col-md-6">
+							<select id="id_carrera" type="text" class="browser-default custom-select form-control" name="id_carrera">
+								@foreach($carreras as $carrera)
+									@if ($carrera->nombre == '$carrera->nombre')
+										<option value="{{ $carrera->id }}" selected="selected">{{ $carrera->nombre }}</option>
+									@else
+										<option value="{{ $carrera->id }}">{{ $carrera->nombre }}</option>
+									@endif
+								@endforeach
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right ">{{ __('Materias:') }}</label>
+						
+						<div class="col-md-6">
+							<select id="id_materia" type="text" class="browser-default custom-select" name="id_materia">
+								<option value="{{ $id_materia }}" selected="selected">{{ $name }}</option>
+							</select>
+						</div>
+					</div>
+
+
+					<br>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">{{ __('Tipo:') }}</label>
+						<div class="col-md-6">
+							<input id="tipo" type="text" class="form-control" name="tipo" required>
+						</div>
+					</div>
+
+					<br>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">{{ __('Nombre material:') }}</label>
+						<div class="col-md-6">
+							<input id="nombre" type="text" class="form-control" name="nombre" required>
+						</div>
+					</div>
+
+					<br>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">{{ __('URL:') }}</label>
+						<div class="col-md-6">
+							<input id="link" type="url" class="form-control" name="link" required>
+						</div>
+					</div>
+
+					<br>
+					<div class="form-group row">
+						<label class="col-md-4 col-form-label text-md-right">{{ __('Archivo:') }}</label>
+						<div class="col-md-6">
+							<input id="recurso" type="file" accept="images/* .pdf .doc" class="form-control" name="recurso" required>
+						</div>
+					</div>
+			
+					
+					<div class="form-group row mb-0">
+						<div class="col-md-10 offset-md-4">
+							<button type="submit" class="btn btn-primary">
+							{{ __('AGREGAR') }}
+							
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
 </form>    
 @endsection()
