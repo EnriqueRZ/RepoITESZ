@@ -13,8 +13,8 @@
         <center><h3>Semestres</h3><br>
         <div class="semestres" >
         @for ($i = 1 ; $i <=  $datosC->cantidad_semestre ; $i++)
-            <button type="submit" class="btnS btn-light">
-                Semestre {{ $i }}
+            <button type="submit" class="btn-responsive btn-light">
+                <h5> Semestre {{ $i }} </h5>
                 @foreach ($dat as $object)
                     @if( $object->semestre == $i )
                         <li>
@@ -32,7 +32,7 @@
                         Agregar materia
                     </a>
                     -->
-                    <a class="btn btn-danger" id='n'
+                    <a class="btn btn-outline-secondary" id='n'
                         href="{{ route('admin', [$datosC->id, $i]) }}">
                         Administración
                     </a>

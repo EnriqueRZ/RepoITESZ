@@ -48,7 +48,7 @@
                                 <td>  {{ $materia->id }} </td>
                                 <td> <a class="btn btn-primary" id='n'
                                     onclick="return confirmar()"
-                                        href="{{ route('edit', $materia->id) }}">
+                                        href="{{ route('editMaterial', $materia->id) }}">
                                         EDITAR
                                     </a>
                                 </td>
@@ -67,12 +67,11 @@
                 </table>
             </div>
             <div>
-                @if(Auth::user()->id_tipo_usuario == 3)
-                    <button class="btn btn-success" id='n' 
-                        type="button" 
-                        onclick="window.location='{{ route('view-add', [$id_materia, $name]) }}'">
+                @if(Auth::user()->id_tipo_usuario > 1)
+                    <a class="btn btn-success" id='n' 
+                        href="{{ route('view-add', [$id_materia, $name]) }}">
                         Agregar material
-                    </button>
+                    </a>
                 @endif
             </div>
         </center>

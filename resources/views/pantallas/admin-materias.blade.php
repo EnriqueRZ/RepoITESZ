@@ -31,10 +31,10 @@
                         <th>Nombre</th>
                         <th>Semestre</th>
                         <th>Carrera</th>
-                        @if(Auth::user()->id_tipo_usuario == 3)
+                       
                             <th>Editar</th>
                             <th>Eliminar</th>
-                        @endif
+                        
                     </tr>
                     @foreach($materias as $materia)
                         <tr>
@@ -42,9 +42,10 @@
                             <td>  {{ $materia->nombre }} </td>
                             <td>  {{ $materia->semestre }} </td>
                             <td> {{ $materia->cname }} </td>
+                            
                             <td> <a class="btn btn-primary" id='n'
                                 onclick="return confirmar()"
-                                    href="{{ route('edit', $materia->id) }}">
+                                    href="{{ route('editM', $materia->id) }}">
                                     EDITAR
                                 </a>
                             </td>

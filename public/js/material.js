@@ -26,6 +26,7 @@ function confirmar() {
 				return false;
 		}
 
+
 /*
 $(function() {
     $('#id_carrera').ready(function(e){

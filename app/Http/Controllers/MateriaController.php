@@ -28,7 +28,7 @@ class MateriaController extends Controller
         #return $request;
         $materia = new Materia();
         $materia->nombre = $request->nombre;
-        $materia->semestre = (int)$request->semestre;
+        $materia->semestre = $request->id_semestre;
         $semestre = $request->semestre;
         $materia->id_carrera = $request->id_carrera;
         $materia->save();
@@ -43,6 +43,7 @@ class MateriaController extends Controller
                 ->select('materia.id','materia.nombre','materia.semestre','materia.id_carrera','carrera.nombre as cname')
                 ->join('carrera', 'carrera.id', 'materia.id_carrera')
                 ->where('materia.semestre', $semestre)
+                ->where('carrera.id', $id_carrera)
                 ->get();
         
         #return json_encode($materias);
@@ -73,5 +74,38 @@ class MateriaController extends Controller
                     ->get();
         return view('pantallas.admin-materias', compact('id_carrera', 'materias', 'semestre'));
     }
+
+    function editM($id) {
+        $materia = DB::table('materia')
+                    ->select('materia.id','materia.nombre','materia.semestre','materia.id_carrera','carrera.nombre as cname')
+                    ->join('carrera', 'carrera.id', 'materia.id_carrera')
+                    ->where('materia.id', $id)
+                    ->first();
+        #return $materia;
+        return view('pantallas.editMateria', compact('materia'));
+    }
+
+    function updateMateria(Request $request) {
+        /*
+        $materia = new Materia();
+        $materia->nombre = $request->nombre;
+        $materia->semestre = $request->semestre;
+        $materia->id_carrera = $request->id_carrera;
+        $materia->save();
+        */
+        Materia::find($request->id)->update($request->all());
+
+        $id_carrera = $request->id_carrera;
+        $semestre = $request->semestre;
+
+        $materias = DB::table('materia')
+                    ->select('materia.id','materia.nombre','materia.semestre','materia.id_carrera','carrera.nombre as cname')
+                    ->join('carrera', 'carrera.id', 'materia.id_carrera')
+                    ->where('materia.semestre', $semestre)
+                    ->get();
+        flash('¡Materia editada con éxito! :D')->success()->important();
+        return view('pantallas.admin-materias', compact('id_carrera', 'materias', 'semestre'));
+    }
+
 
 }

@@ -91,7 +91,7 @@
                         @else  
                             <ul class="navi menu"> 
                                 
-                                <li><a href="" class="navbar-brand form-controller" disabled>Carrera</a>
+                                <li><a href="#" class="navbar-brand form-controller" disabled>Carrera</a>
                                     <ul class="menu">
                                         @foreach($carreras as $carrera)
                                             <li><a href="{{ route('view-semestres', $carrera->id) }}">
@@ -119,7 +119,7 @@
                                 </li>
                             @endif
                         @else 
-                            @if ( Auth::user()->id_tipo_usuario > 1 )
+                            @if ( Auth::user()->id_tipo_usuario == 3 )
                                 <a class="navbar-brand" href="{{ route('view-admin') }}">
                                     Herramientas
                                 </a>

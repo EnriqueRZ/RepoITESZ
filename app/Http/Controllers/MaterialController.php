@@ -10,6 +10,7 @@ use DB;
 use App\Http\Controllers\flash;
 use Validator;
 use Storage;
+use DateTime;
 
 class MaterialController extends Controller
 {   
@@ -52,7 +53,7 @@ class MaterialController extends Controller
         $id_materia = $request['id_materia'];
         
         $file = $request->file('recurso');
-        $nombre = $file->getClientOriginalName();
+        $nombre = date('Y-m-d H:i').'-'.$file->getClientOriginalName();
         
         $path = $request->file('recurso')->storeAs(
             'public', $nombre
@@ -105,7 +106,7 @@ class MaterialController extends Controller
         $GLOBALS[id_materia] = $id_materia;
     }
 
-    public function edit(Material $material){
+    public function editMaterial(Material $material){
         
         $name = DB::table('itesz.materia')
             ->select('nombre')
@@ -130,7 +131,7 @@ class MaterialController extends Controller
             Storage::delete('public/'.$old->recurso);
 
             $file = $request->file('recurso');
-            $nombre = $file->getClientOriginalName();
+            $nombre = date('Y-m-d H:i').'-'.$file->getClientOriginalName();
 
             $path = $request->file('recurso')->storeAs(
                 'public', $nombre

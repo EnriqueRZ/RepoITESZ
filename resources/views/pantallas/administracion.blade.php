@@ -1,22 +1,29 @@
 @extends('pantallas.principal')
 
 @section('main')
-    <center>
-        <div class="content">
-            <h1 class="title1">
-                Panel de administración
-                <br><br>
-                <div class="semestres" >
-                    <button type="submit" class="btnS btn-primary">
-                        Material didactico
-                        <li><a href="{{ route('view-addmaterial' }}">{{ Agregar material }}</a></li>
-                    </button>
-                    <button type="submit" class="btnS btn-primary">
-                        Alumnos
-                    </button>          
-                </div>
+<center>
+    <div class="container" >
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Panel de administración') }}</div>
+
+                        <div class="panel">
+                            <a class="btn btn-danger" id='n'
+                                href="{{ route('view-carrera') }}">
+                                Carreras
+                            </a>
+
+                            <a class="btn btn-danger" id='n'
+                                href="{{ route('usuarios') }}">
+                                Usuarios
+                            </a>       
+                        </div>
    
-            </h1> 
+                    </div>
+                </div>
+            </div>
         </div>
-    </center>
+    </div>
+</center>
 @endsection()

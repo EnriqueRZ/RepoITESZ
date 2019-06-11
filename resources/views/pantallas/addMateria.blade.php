@@ -4,7 +4,7 @@
 
 @include('flash::message')
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script src="{{ asset('js/material.js') }}"></script>
+<script src="{{ asset('js/materia.js') }}"></script>
 	@if(session()->has('flash_notification.important'))
 		<button type="button"
 				class="close table-tam"
@@ -56,7 +56,9 @@
 					<div class="form-group row">
 						<label class="col-md-4 col-form-label text-md-right">{{ __('Núm. Semestre:') }}</label>
 						<div class="col-md-6">
-							<input id="semestre" type="number" value="{{ $semestre }}" max="9" min="1" class="form-control" name="semestre" required>
+							<select id="id_semestre" type="text" class="browser-default custom-select form-control" name="id_semestre">
+							
+							</select>	
 						</div>
 					</div>		
 					
